@@ -1,0 +1,29 @@
+<div id="divGridViewDisplay" class="row divGridViewDisplayPos">
+  <div class="col-sm-12">
+    <dx-data-grid id="gridContainer"
+                  [dataSource]="gridData"
+                  [columns]="columns"
+                  [columnAutoWidth]="true"
+                  [showColumnLines]="true"
+                  [showRowLines]="true"
+                  [showBorders]="true"
+                  [wordWrapEnabled]="true"
+                  (onEditorPreparing)="onEditorPreparing($event)">
+      <dxo-filter-row [visible]="true" [showOperationChooser]="false"></dxo-filter-row>
+      <dxo-sorting mode="single"></dxo-sorting>
+      <dxo-group-panel [visible]="showGroupPanel"></dxo-group-panel>
+
+      <div *dxTemplate="let data of 'actionCellTemplate'">
+        <button class="smallCircularButton" *ngIf="showEditButton" (click)="editEntity(data.value)"><i class="fa fa-pencil"></i></button>
+      </div>
+    </dx-data-grid>
+  </div>
+</div>
+
+
+<!--EXCEL EXPORT-->
+<dx-data-grid id="excelDataGridContainer"
+              (onInitialized)="onExcelGridInitializedEventHandler($event)"
+              (onContentReady)="onContentReadyEventHandler($event)"
+              [dataSource]="excelGridData"
+              [columns]="excelDataColumns" [visible]="false"></dx-data-grid>

@@ -1,0 +1,45 @@
+<div class="row button-wrap">
+  <div class="col-sm-7">
+    <span class="addProjectPos1">Libraries</span><br />
+    <div id="projectsSearch">
+      <div class="fontIcon">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Find library By name" class="inputSearch" (keyup)="onKeyupEvent($event)" />
+      </div>
+    </div>
+  </div>
+</div> <!--button-wrap ends-->
+
+<div class="card-wrap">
+  <div id="divEngagementsCardLayout">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let library of filteredLibraries">
+        <div class="card lib_card">
+          <h4 class="card_head">
+            <a href="javascript:void(0)" (click)="loadLibrary(library)">
+              {{library.name}}
+            </a>
+          </h4>
+          <div class="button-wrap">
+            <div class="profile-pic Libprofile-pic1">
+              <figure>
+                <a href="javascript:void(0)" (click)="loadLibrary(library)">
+                  <img [src]="getLibraryImage(library)" alt="" />
+                </a>
+              </figure>
+            </div>
+
+          </div> <!--button-wrap ends-->
+
+          <div class="text-wrap">
+            <small class="text-info lib_text_info">{{library.description}}</small>
+          </div> <!--text-wrap ends-->
+          <!--<span class="lowerLeft">23 ITEMS</span>-->
+        </div>
+
+      </div>
+
+    </div>
+    
+  </div> <!--cardLayout ends-->
+</div> <!--card-wrap ends-->

@@ -1,0 +1,121 @@
+<div class="row button-wrap Btn_Wrap_project">
+
+  <div id="ProjectdivCenter">
+    <span class="bigTxt">
+      Looks like it is your first time here.
+    </span>
+    <span class="middleTxt">
+      Let’s get started with a new project.
+    </span>
+    <span class="lowercapTxt">
+      Projects allow you to manage your engagements.
+    </span>
+    <button type="button" class="btn radius btn-default buttonPart2" (click)="onAddClick()">
+       ADD A NEW PROJECT
+    </button>
+  </div>
+  <div class="col-sm-7">
+    <span *ngFor="let filterTag of filterTags">
+      <button type="button" class="btn radius btn-success" (click)="deleteFilterTag(filterTag)">{{filterTag}} <i class="fa fa-close"></i></button>
+    </span>
+
+    <span class="addProjectPos1">Projects</span><br />
+    <div id="projectsSearch">
+      <div class="fontIcon">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Find project By name" class="inputSearch" (keyup)="onKeyupEvent($event)"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-5 text-right" style="margin-top:0%;">
+
+    <button type="button" class="btn btn-circle btn-default projectDownloadBtn" (click)="exportGridDataToExcel()">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      <!--<i class="fa fa-print fa-xs"></i>-->
+    </button>
+    <button type="button" class="btn btn-circle btn-default cardViewPart"  [ngClass]="setViewClass(cardView)" (click)="changeView(cardView)">
+      <i class="fa fa-th-large"></i>
+    </button>
+    <button type="button" class="btn btn-circle btn-default gridViewPart"  [ngClass]="setViewClass(gridView)" (click)="changeView(gridView)">
+      <i class="fa fa-th"></i>
+    </button>
+    
+    <button type="button" class="btn radius btn-default buttonPart"  (click)="onAddClick()">
+      + ADD PROJECT
+    </button>
+  </div>
+</div> <!--button-wrap ends-->
+
+<div class="card-wrap">
+  <div id="divEngagementsCardLayout" class="cardposition">
+    <div class="row project_card">
+      <div class="col-sm-4" *ngFor="let project of projects">
+        <div class="card">
+          <span class="status btn btn-circle btn-success" disabled><i class="fa fa-check"></i></span>
+          <h4>
+            <a href="javascript:void(0)" (click)="editEntity(project.id)">
+              {{getProjectName(project)}}
+            </a>
+            <span>Last updated: </span>
+          </h4>
+          <div class="button-wrap">
+            <table>
+              <tr>
+                <td>
+                  <button class="btn btn-circle btn-default editBtnPart" data-toggle="tooltip" data-placement="bottom" title="Edit" (click)="editEntity(project.id)">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-circle btn-default userBtnPart" data-toggle="tooltip" data-placement="bottom" title="Resources" (click)="getResources(project.id)">
+                    <i class="fa fa-users"></i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-circle btn-default deleteBtnPart disabled" data-toggle="tooltip" data-placement="bottom" title="Delete"  (click)="delete(project.id)">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <div class="profile-pic">
+              <figure>
+                <img [src]="getProfilePicture(project)" alt="" (click)="editEntity(project.id)" />
+              </figure>
+            </div>
+          </div> <!--button-wrap ends-->
+
+          <div class="text-wrap">
+            <small class="text-info">2/7 milestones completed</small>
+            <small class="text-warning">0/19 tasks completed</small>
+            <small class="text-success-dk">$7,907,980.00 budget left</small>
+          </div> <!--text-wrap ends-->
+        </div>
+      </div>
+    </div>
+  </div> <!--cardLayout ends-->
+
+  <div id="divEngagementsGridLayout" class="displayPosition">
+    <div class="row">
+      <div class="col-sm-12">
+        <dx-data-grid id="gridContainer"
+                      [dataSource]="projects"
+                      [columns]="columns"
+                      [columnAutoWidth]="true"
+                      [showColumnLines]="true"
+                      [showRowLines]="true"
+                      [showBorders]="true">
+          <dxo-filter-row [visible]="true" [showOperationChooser]="false"></dxo-filter-row>
+          <dxo-sorting mode="single"></dxo-sorting>
+          <dxo-group-panel [visible]="true"></dxo-group-panel>
+
+          <div *dxTemplate="let data of 'actionCellTemplate'">
+            <button class="smallCircularButton" (click)="editEntity(data.value)"><i class="fa fa-pencil"></i></button>
+          </div>
+        </dx-data-grid>
+      </div>
+    </div>
+  </div> <!--gridLayout ends-->
+
+</div> <!--card-wrap ends-->

@@ -1,0 +1,7 @@
+.tab .dx-field-item-label-content {
+  margin-left: 15px
+}
+
+.dx-field-item:not(.tab) .dx-field-item-label-content {
+  margin-right: 15px
+}

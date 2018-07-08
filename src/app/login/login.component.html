@@ -1,0 +1,56 @@
+<div class="home" id="divLogin" style="background:#fff;">
+  <!--content-->
+  <main class="landing-screen">
+    <div id="deloitte_Logo" class="col-sm-12">
+      <img src="app/assets/images/Capture1.png"  class="img-responsive" style="
+    margin-left: 25%;"/>
+    </div>
+    <div id="divLeft"></div>
+    <div id="divLogin" class="login-wrap wow fadeIn slide" data-wow-duration="2s">
+      <div class="cover-wrap">
+        <div class="top login-form">
+          <div class="row">
+            <div class="col-sm-12"><h4 class="title">Sign in with your work credential</h4></div>
+            <div id="divLoginErrorMsg" class="col-sm-12" style="display: none;"><span class="text-sm-center text-danger">{{loginErrorMsg}}</span></div>
+            <div class="col-sm-12">
+              <form>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" placeholder="youremail@example.com" [(ngModel)]="email" name="email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="password" placeholder="Password" [(ngModel)]="password" name="password">
+                  </div>
+                </div>
+                <div style="width:100%">
+                  <button class="btn btn-default loginBtn" (click)="login()"><i *ngIf="showSpinner" style="margin-left:-15px;" class="fa fa-spinner fa-pulse fa-lg fa-fw"></i> {{loginButtonText}} </button>
+                  <a href="javascript:void(0)" (click)="onForgotPasswordClick()" class="forgotpass " id="slide1">Forgot Password?</a>
+                </div><br />
+                      <span class="deloitte_textterm">By logging in you agree to the <span style="color:#14a5fb">Deloitte terms.</span></span>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="top forget-pass-block" style="display: none" id="resetPwd">
+          <div class="row">
+            <div class="col-sm-12">
+              <form class="form-inline">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="email" placeholder="Email Address" data-ng-model="forgotPasswordAccountEmail">
+                  </div>
+                </div>
+                <button class="btn btn-default resetpassword " data-ng-click="resetPassword()"> reset password</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="chat hvr-bob"> <i class="fa fa-commenting"></i></button>
+    <div class="loadpanel" dx-load-panel="loadOptions"></div>
+  </main><!--main ends-->
+</div>
+

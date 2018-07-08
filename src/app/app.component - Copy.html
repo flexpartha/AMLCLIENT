@@ -1,0 +1,97 @@
+<div>
+  <div class="cover-wrap">
+
+    <!-- NAVBAR HEADER -->
+    <div class="home">
+      <header class="header">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle offcanvas-toggle pull-right" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;">
+              <span class="sr-only">Toggle navigation</span>
+              <span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </span>
+            </button>
+            <a class="navbar-brand logo"><img src="app/assets/images/logo.svg" alt=""></a>
+          </div>
+
+          <div class="navbar-offcanvas navbar-offcanvas-touch" id="js-bootstrap-offcanvas">
+            <div class="collapse pos-rlt navbar-collapse">
+              <!-- nabar right -->
+              <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="!authService.isLoggedIn()" class="dropdown" dropdown>
+                  <a [routerLink]="['/login']" class="dropdown-toggle text-success-dk" dropdown-toggle>
+                    <strong>LOGIN</strong>
+                  </a>
+                </li>
+                <li *ngIf="authService.isLoggedIn()">
+                  <a (click)="logOut()" class="dropdown-toggle text-success-dk" dropdown-toggle>
+                    <strong>LOGOUT</strong>
+                  </a>
+                </li>
+
+                <!--<li class="dropdown" dropdown>
+                  <a href>
+                    <strong>|</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown" dropdown>
+                  <a ui-sref="account.signin" class="dropdown-toggle text-success-dk" dropdown-toggle>
+                    <strong>METHODOLOGY</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown" dropdown>
+                  <a href>
+                    <strong>|</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown" dropdown>
+                  <a ui-sref="account.signin" class="dropdown-toggle text-success-dk" dropdown-toggle>
+                    <strong>PRICING</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown disabled" dropdown>
+                  <a href>
+                    <strong>&nbsp;</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown" dropdown>
+                  <a ui-sref="account.signin" class="dropdown-toggle text-danger-dk" dropdown-toggle>
+                    <strong>ABOUT US</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown" dropdown>
+                  <a href>
+                    <strong>|</strong>
+                  </a>
+                </li>
+
+                <li class="dropdown" dropdown>
+                  <a ui-sref="user.signin" class="dropdown-toggle text-danger-dk" dropdown-toggle>
+                    <strong>SUPPORT</strong>
+                  </a>
+                </li>-->
+              </ul>
+              <!-- / navbar right -->
+
+            </div>
+
+          </div>
+        </nav>
+      </header>
+      <!-- /NAVBAR HEADER ENDS -->
+    </div>
+
+    <div class="green">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

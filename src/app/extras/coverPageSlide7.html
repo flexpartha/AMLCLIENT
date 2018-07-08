@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--GOOGLE FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Cover Assesment Slide 4</title>
+    <link rel="stylesheet" href="amlPlatformStyle.css" type="text/css" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#myCarousel").carousel({
+                interval: false
+            });
+        });
+    </script>
+    <style type="text/css">
+        .carousel {
+            background: #fff;
+            margin-top: 20px;
+        }
+
+            .carousel .item {
+                min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+            }
+
+                .carousel .item img {
+                    margin: 0 auto; /* Align slide image horizontally center */
+                }
+
+        .bs-example {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body style="background:#fff;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="progressPart2">
+                <div class="divCircle">
+                    <div class="circle-badge_complete">
+                        <span class="glyphicon glyphicon-ok glyphIcon2"></span>
+                    </div>
+                </div>
+                <div class="divLine">
+                    <hr style="border: 0.7px solid #E0E0E0; margin-top: 12px;" />
+                </div>
+                <div class="divCircle">
+                    <div class="circle-badge_complete">
+                        <span class="glyphicon glyphicon-ok glyphIcon2"></span>
+                    </div>
+                </div>
+                <div class="divLine">
+                    <hr style="border: 0.7px solid #E0E0E0; margin-top: 12px;" />
+                </div>
+                <div class="divCircle">
+                    <div class="circle-badge_complete">
+                        <span class="glyphicon glyphicon-ok glyphIcon2"></span>
+                    </div>
+
+                </div>
+                <div class="divLine">
+                    <hr style="border: 0.7px solid #E0E0E0; margin-top: 12px;" />
+                </div>
+                <div class="divCircle">
+                    <div class="circle-badge3">
+                        <strong>4</strong>
+                    </div>
+                </div>
+                <div class="divLine">
+                    <hr style="border: 0.7px solid #E0E0E0; margin-top: 12px;" />
+                </div>
+                <div class="divCircle">
+                    <div class="circle-badge2">
+                        <strong>5</strong>
+                    </div>
+                </div>
+            </div>
+            <div id="divRiskmappingrule">
+                <div id="left2">
+                    <span class="glyphicon glyphicon-chevron-left arrowback"></span><span class="arrowback2">Back to list</span>
+                </div>
+                <div id="right2">
+                    <span class="ruleHead">
+                        Risk to Rule Mapping for Funds Transfer
+                    </span>
+                </div>
+            </div><br />
+            <hr class="hr1cls" />
+            <div id="divRiskmappingrulecarousel">
+                <div class="bs-example">
+                    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                            <li data-target="#myCarousel" data-slide-to="6"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            1. Add or edit rules below
+                                        </span>
+                                    </div>
+                                    <div id="Rightfloat">
+                                        <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                                            ADD/EDIT
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <table>
+                                        <tr>
+                                            <th style="padding-left:6px;">
+                                                RULL NAME
+                                            </th>
+                                            <th style="text-align: left !important; padding-left:6px;">
+                                                RULL DESCRIPTION
+                                            </th>
+                                            <th style="text-align: center !important;">
+                                                RULE LIBRARY
+                                            </th>
+                                        </tr>
+
+                                        <tr class="trClass2">
+                                            <td style="width:12%;"><span class="tdTxt2"></span></td>
+                                            <td style="text-align:center;width:70%;">
+                                                <span class="tdTxt2">
+                                                    You currently don’t have any items in this list. Let’s start by <span class="addingRule">adding a rule.</span>
+                                                </span>
+                                            </td>
+                                            <td style="text-align:center;width:8%;"><span class="tdTxt2"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            2. List your observations
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="carouselDiv2">
+                                    <input type="text" placeholder="" class="inputTxt" />
+
+                                </div>
+                                <div id="carouselDivcontant">
+                                    <div id="Leftfloat">
+                                        <span class="text">
+                                            3. Select enhancement priority
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="carouselDiv">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary3 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="dropdownTxt">Select One..</span></a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">partha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="margin-top:135px;">
+                            <span class="glyphicon glyphicon-chevron-left" style="color:#3C91E6;"></span>
+                        </a>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" style="color:#3C91E6;"></span>
+    </a>
+</body>
+</html>

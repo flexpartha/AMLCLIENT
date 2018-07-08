@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--GOOGLE FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/app/assets/css/hover.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Cover Assesment Slide 1</title>
+    <link rel="stylesheet" href="amlPlatformStyle.css" type="text/css" />
+</head>
+<body style="background:#F9F9FB;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-7" style="
+    margin-top: 2%;">
+                <span class="coveraHead">
+                    List of Coverage Assessments
+                </span>
+
+            </div>
+            <div id="coverDiv">
+                <div class="topBtnGrp">
+                    <button type="button" class="btn btn-circle btn-default projectDownloadBtn" (click)="exportGridDataToExcel()">
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                        <!--<i class="fa fa-print fa-xs"></i>-->
+                    </button>
+                    <button type="button" class="btn radius btn-default buttonPart" (click)="onAddClick()">
+                         START NEW ASSESSMENT
+                    </button>
+                </div>
+                <table>
+                    <tr>
+                        <th style="padding-left:6px;">
+                            Assessment name
+                        </th>
+                        <th style="text-align: center !important;">
+                            Rule type
+                        </th>
+                        <th style="text-align: center !important;">
+                            Rule system name
+                        </th>
+                        <th style="text-align: center !important;">STATUS</th>
+                        <th style="text-align: center !important;">
+                            Last modified
+                        </th>
+                        <th style="text-align: center !important;">ACTIONS</th>
+                    </tr>
+                    <tr class="trClass">
+                        <td style="width:30%"><input type="text" placeholder="Type here to search" class="inputTabletext" /></td>
+                        <td style="width:10%"><input type="text" placeholder="(All)" class="inputTabletext" /></td>
+                        <td style="width:15%"><input type="text" placeholder="(All)" class="inputTabletext" /></td>
+                        <td style="width:10%"><input type="text" placeholder="(All)" class="inputTabletext" /></td>
+                        <td style="text-align:right;color:#3C91E6;"><span class="glyphicon glyphicon-list-alt"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr class="trClass2">
+                        <td><span class="tdTxt2">New Assessment</span></td>
+                        <td style="text-align:center"><span class="tdTxt2">TM</span></td>
+                        <td  style="text-align:center"><span class="tdTxt2">Actimize</span></td>
+                        <td  style="text-align:center"><span class="tdTxt2">Completed</span></td>
+                        <td  style="text-align:center"><span class="tdTxt2">Jan 19 2018</span></td>
+                        <td style="text-align:center">
+                            <button class="btn btn-circle btn-default editBtnPart" data-toggle="tooltip" data-placement="bottom" title="Edit" (click)="editEntity(project.id)">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AML Platform</title>
+  <base href="/src/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--GOOGLE FONT-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
+  <!-- DevExtreme stylesheets -->
+  <link rel="stylesheet" type="text/css" href="/node_modules/devextreme/dist/css/dx.common.css" />
+  <link rel="stylesheet" type="text/css" href="/node_modules/devextreme/dist/css/dx.light.css" />
+
+  <!--CSS LIBRARIES-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/app/assets/css/hover.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/app/assets/css/jquery.steps.css">
+  <link rel="stylesheet" href="/src/app/assets/css/jquery-ui.min.css">
+
+  <link rel="stylesheet" href="/src/app/assets/css/bootstrap.offcanvas.css">
+  <link rel="stylesheet" href="/src/app/assets/css/jquery.bxslider.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="all" href="/src/app/assets/css/amlPlatformStyle.css">
+
+
+  <!-- Polyfill(s) for older browsers -->
+  <script src="/node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="/node_modules/zone.js/dist/zone.js"></script>
+  <script src="/node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('main.js').catch(function (err) { console.error(err); });
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/src/app/assets/js/bootstrap.offcanvas.min.js"></script>
+  <script src="/src/app/assets/js/jquery.bxslider.min.js"></script>
+  <script src="/src/app/assets/js/wow.min.js"></script>
+  <script src="/src/app/assets/js/jquery.circliful.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" rel="stylesheet"></script>
+  <script src="/src/app/assets/js/jquery.steps.js"></script>
+
+  <script src="/src/app/assets/js/main.js"></script>
+
+</head>
+
+  <body>
+    <div id="app">
+      <amlPlatform>Loading platform, it'll just be a minute...</amlPlatform>
+    </div>
+  </body>
+</html>

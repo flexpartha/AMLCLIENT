@@ -1,0 +1,164 @@
+<div class="" id="divDashboard">
+  <div class="cover-wrap">
+    <!--HEADER-->
+    <div>
+      <header class="header wow fadeIn">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-offcanvas navbar-offcanvas-touch" id="js-bootstrap-offcanvas">
+            <div class="navbar-left">
+              <img src="app/assets/images/Dcom-black-32x32_1.png" class="DLogo" />
+              <span class="AmlTxt">AML Risk Management </span>
+            </div>
+
+            <div class="navbar-right text-right">
+              <ul class="nav navbar-nav user-block">
+                <li class="dropdown">
+                  <a href="">
+                    <span><img src="app/assets/images/badge_icon1.png" alt="" class="badge_icon1"></span>
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" id="myBtn" (click)="onModelopen();" role="button" aria-haspopup="true" aria-expanded="false">
+                    <figure><img src="app/assets/images/user.png" alt=""></figure> <!--<i class="fa fa-angle-down "></i>-->
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Setting Modal Starts Here -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="settingTxt"><i class="fa fa-cog fa2" aria-hidden="true"></i>Setting</div>
+            <div class="logoutTxt"><i class="fa fa-sign-out fa3" aria-hidden="true"></i>Logout</div>
+          </div>
+
+        </div>
+        <!-- Setting Modal Ends Here -->
+
+        <div class="header-lower">
+          <span><i class="glyphicon glyphicon-tasks side-toogle glyphIconlg"></i>PROJECTS</span>
+          <div class="right">
+            <div class="spanTxt">CURRENT PROJECT:</div>
+            <div class="btn-group selectDropdwn">
+              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select a Project</a>
+              <ul class="dropdown-menu">
+                <li *ngFor="let project of globalSettings.Projects">
+                  <a href="javascript:void(0)">{{helperService.getProjectName(project)}}</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </header>
+    </div> <!--HEADER ends-->
+
+
+    <main class="app">
+
+      <!--aside nav menu starts-->
+      <div class="aside wow fadeIn">
+        <nav id="sidebar">
+          <div class="sidebar-header">
+            <div *ngFor="let defaultSystemMenuGroup of defaultSystemMenu.groups">
+              <div id="icon" *ngFor="let defaultSystemMenu of defaultSystemMenuGroup.menus" (click)="onMenuClick(defaultSystemMenu)">
+                
+                  <img src="app/assets/images/icon.png" width="20" height="20"/>
+                  <span class="topNavbarTxt">{{defaultSystemMenu.name}}</span>
+                
+              </div>              
+            </div>
+            <br class="spacer" />
+          </div>
+
+          <ul class="list-unstyled components" id="toggleBar">
+            <li class="liTopBorder" *ngFor="let menuGroup of mainMenu.groups">
+              <a href="javascript:void(0)"  class="topToggle" data-toggle="collapse" aria-expanded="false">
+                <img src="app/assets/images/riskMng.png" width="20" height="20" class="mainMenuIcon"/>
+                {{menuGroup.name}}
+              </a>
+              <ul class="collapse list-unstyled collapse sidebar-tabs" id="homeSubmenu" >
+                <li id="submenu" *ngFor="let menu of menuGroup.menus" (click)="onMenuClick(menu);">
+                  {{menu.name}}</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      </div> <!--aside nav menu ends-->
+
+
+      <!--main content-->
+      <div id="divMainContent" class="main-content wow fadeIn flash-loader">
+        <div id="divAllEngagements" class="allEngagements-wrap">
+
+          <div class="tab-content-wrap tab-wrap_bg">
+            <div class="top">
+              <div id="divButtonWrap" class="row button-wrap Btn_Wrap">
+                <div class="col-sm-4" id="divProjectName" style="display: none;">
+                  <h4>{{ancestorEntityName | uppercase}}</h4>
+                </div>
+
+                <div id="divButtons" class="col-sm-8 text-right" style="display: none;">
+                  <button type="button" *ngIf="showAddNewButton" class="btn radius btn-default buttonPart" (click)="actionButtonClicked(addButtonCode)">
+                    <i class="fa fa-plus"></i> CREATE NEW
+                  </button>
+
+    <button type="button" *ngIf="showGoBackButton" class="btn radius btn-default cancelBtn" (click)="actionButtonClicked(cancelButtonCode)">
+      <i class="fa fa-remove fontawesomeSpace"></i>CANCEL
+                  </button>
+                  <button type="button" *ngIf="showSaveButton" class="btn radius btn-default saveBtn" (click)="actionButtonClicked(saveButtonCode)">
+                    <i class="fa fa-save fontawesomeSpace"></i>SAVE
+                  </button>
+                  <button type="button" *ngIf="showDeleteButton" class="btn radius btn-danger removeBtn" (click)="actionButtonClicked(deleteButtonCode)">
+                     <i class="fa fa-trash fontawesomeSpace"></i>DELETE</button>
+      <button type="button" *ngIf="showExportToExcelButton" class="btn btn-circle btn-default projectDownloadBtn" (click)="actionButtonClicked(exportToExcelButtonCode)"><i class="fa fa-download"></i></button>
+    </div>
+  </div> <!--button-wrap ends-->
+</div>
+
+            <div>
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div> <!--main content ends-->
+
+    </main> <!--main app ends-->
+
+  </div>
+</div>
+
+
+<!--project selection pop-up-->
+<div>
+  <dx-popup class="popup"
+            [width]="470"
+            [height]="210"
+            [showTitle]="true"
+            title="Select a Project"
+            [dragEnabled]="false"
+            [closeOnOutsideClick]="true"
+            [(visible)]="selectProjectPopupVisible">
+    <div *dxTemplate="let data of 'content'">
+      <div class="row">
+        <dx-form [formData]="selectedProject" [items]="formItems" [showColonAfterLabel]="false"></dx-form>
+      </div>
+      <div class="row">
+        <div class="divider">
+          <hr />
+        </div>
+      </div>
+      <div class="col-sm-offset-3 col-sm-9 text-right">
+        <button type="button" class="btn radius btn-info cancelBtn" style="height:30px;" (click)="onProjectSelectedOkClick()"> OK</button>
+        <button type="button" class="btn radius btn-default btn-sm" (click)="onProjectSelectedCancelClick()"> Cancel</button>
+      </div>
+    </div>
+  </dx-popup>
+</div>
+
+

@@ -1,0 +1,64 @@
+<div id="divGridViewDisplay" class="row">
+  <div id="divButtonWrap" class="row button-wrap">
+    <div id="divButtons" class="col-sm-12 text-right buttonLeft">
+      <!--<input type="text" placeholder="Search Options" class="searchOtion"/>-->
+      <button type="button" class="btn btn-circle btn-default searchBtn" (click)="onFilterSearchTermsClick()"><i class="fa fa-search"></i></button>
+      <button type="button" class="btn btn-circle btn-default downloadBtn" (click)="exportGridDataToExcel()"><i class="fa fa-download"></i></button>
+      <div id="documentSection">
+        <div id="leftPortion">
+          <span>Search:</span>
+        </div>
+        <div id="rightPortion">
+          <div class="form-group formGroupDim">
+            <input name="group100" type="radio" id="radioBtn1" class="radioinput">
+            <label for="radio100" class="radioLabel">Term Search</label>
+          </div>
+          <div class="textInput">
+            <input type="text" id="searchTxt1" class="searchTxtBox1" width="300" height="30" style="display:none" />
+          </div>
+          <div class="form-group formGroupDim2">
+            <input name="group100" type="radio" id="radioBtn2" class="radioinput">
+            <label for="radio100" class="radioLabel2">Proximity Search</label>
+          </div>
+          <div class="lowerPart" id="lowersearchTxt">
+            <input type="text" class="inputTxt" placeholder="Word 1" />
+            <input type="text" class="inputTxt" placeholder="Word 2" />
+            <input type="text" class="inputTxt3 allownumericwithoutdecimal" placeholder="Proximity Distance" />
+            <button type="button" class="btn radius btn-default cancelBtn searchButton">Search</button>
+          </div>
+        </div>
+        <!--<button type="button" class="btn radius btn-default cancelBtn documentCancel">
+           Export To Excel
+        </button>-->
+      </div>
+    </div>
+  </div> <!--button-wrap ends-->
+
+  <div class="col-sm-12">
+    <dx-data-grid id="gridContainer"
+                  [dataSource]="documents"
+                  [columns]="columns"
+                  [columnAutoWidth]="true"
+                  [showColumnLines]="true"
+                  [showRowLines]="true"
+                  [showBorders]="true"
+                  (onEditorPreparing)="onEditorPreparing($event)">
+      <dxo-filter-row [visible]="true" [showOperationChooser]="false"></dxo-filter-row>
+      <dxo-sorting mode="single"></dxo-sorting>
+      <dxo-group-panel [visible]="false"></dxo-group-panel>
+
+      <dxi-column dataField="name" cellTemplate="documentNameCellTemplate" sortOrder="asc"></dxi-column>
+      <dxi-column dataField="dateUploaded" [width]="125" dataType="date" caption="Uploaded On"></dxi-column>
+      <dxi-column dataField="id" [width]="60" [allowFiltering]="false" caption=""
+                  [allowSorting]="false" cellTemplate="actionCellTemplate" [allowExporting]="false"></dxi-column>
+
+      <div *dxTemplate="let data of 'documentNameCellTemplate'">
+        <a href="javascript:void(0)" (click)="openDocument(data.data)">{{data.value}}</a>
+      </div>
+
+      <div *dxTemplate="let data of 'actionCellTemplate'">
+        <button class="smallCircularButton" *ngIf="showDeleteButton" (click)="deleteDocument(data.value)"><i class="fa fa-close"></i></button>
+      </div>
+    </dx-data-grid>
+  </div>
+</div>

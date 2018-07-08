@@ -1,0 +1,29 @@
+<div class="tab-hold">
+  <div class="top">
+    <span class="addProjectPos">Add a new project</span>
+        <div id="errorMsg">
+          <span>This is an error Message</span>
+        </div>
+        <div id="successMsg">
+          <span>This is an success Message</span>
+        </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <!--tab nav starts-->
+        <ul id="ulTabsList" class="nav nav-tabs advance">
+          <li [id]="section.id" *ngFor="let section of sections">
+            <a class="" (click)="onSectionClick(section)" data-toggle="tab">{{section.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!--top ends-->
+
+
+  <div class="bottom-block" style="margin-top:13px;">
+    <!--tab content starts-->
+    <div id="divTabContent" class="tab-content">
+      <router-outlet></router-outlet>
+    </div> <!--tab-content ends-->
+  </div> <!--bottom-block ends-->
+</div>
